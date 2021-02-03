@@ -76,6 +76,6 @@
 				header("location: login.php");
 			}
 		}
-	}
+    }
 
 ?>
