@@ -2,18 +2,20 @@
 	//index.php
 
 	// Include config file
-	require_once "config.php";
+	require_once "../php/config.php";
 
 	if(empty($_SESSION['username'])){
-		header("location: login.php");
+		header("location: ../php/login.php");
 	}
 ?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
     	<meta charset="UTF-8">
+      	<link rel="icon" href="/images/gripefavicon.png">
     	<title>GRIPE</title>
     	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<script type="text/javascript" src="../js/gripe.js"></script>
       	<style>
             body{
                 font: 20px sans-serif;
@@ -32,33 +34,39 @@
                 background-color: #300030;
                 border: 1px solid #500050;
                 box-shadow: 2px 2px black;
+				height: 10vh;
             }
             .top-nav li{
                 display: inline-block;
-              	margin: 10px;
+              	margin: 0px 10px;
                 padding-top: 10px;
+				margin-top: 1vh;
             }
+          .logo{
+          	text-align: center;
+            margin-left: 5vh;
+          }
           .left-nav{
                 width: 100%;
                 margin-left: -20px;
-            	margin-top: -1px;
+				margin-top: -1px;
                 background-color: #300030;
                 border: 1px solid #500050;
                 box-shadow: 2px 2px black;
             	float: left;
             	display: inline-block;
-            	height: 95vh;
+            	height: 90vh;
             }
           	.right-nav{
                 width: 100%;
                 margin-right: -15px;
-              	margin-top: -2px;
+              	margin-top: -1px;
                 background-color: #300030;
                 border: 1px solid #500050;
                 box-shadow: 2px 2px black;
             	float: right;
               	display: inline-block;
-              	height: 95vh;
+              	height: 90vh;
             }
             .right-nav li, .left-nav li{
 				text-decoration: none;
@@ -117,10 +125,11 @@
           <div class="top-nav">
 			<nav>
               <ul>
-                  <li><a href="index.php"><strong><?php echo $_SESSION['username']; ?></strong></a></li>
+                  <li><a href="../php/index.php"><strong><?php echo $_SESSION['username']; ?></strong></a></li>
                   <li><a href="#">Profile</a></li>
                   <li><a href="#">Settings</a></li>
-                  <li><a href="logout.php" class="btn btn-danger">Log Out</a></li>
+                  <li><a href="../php/logout.php" class="btn btn-danger">Log Out</a></li>
+                <li><a href="../php/index.php"><img class="logo" src="/images/gripelogo.png" height="100px"></a></li>
               </ul>
 			</nav>
           </div>
@@ -142,9 +151,6 @@
                       	<div class="words">
                             <h4>Username</h4>
                             <p><b>What is everyone doing tonight?</b></p>
-                          	<p><b>What is everyone doing tonight?</b></p>
-                          	<p><b>What is everyone doing tonight?</b></p>
-                          	<p><b>What is everyone doing tonight?</b></p>
                       	</div>
                   	</div>
   				</div>

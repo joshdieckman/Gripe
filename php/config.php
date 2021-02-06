@@ -47,7 +47,7 @@
 			mysqli_query($link, $sql);
 			$_SESSION['username'] = $username;
 			$_SESSION['success'] = "You are now logged in!";
-			header("location: index.php");
+			header("location: ../php/index.php");
 		}
 	}
 
@@ -73,9 +73,9 @@
 				header("location: index.php");
 			}else{
 				array_push($errors, "The username/password combination is invalid");
-				header("location: login.php");
+				header("location: ../php/login.php");
 			}
 		}
-    }
+	}
 
 ?>

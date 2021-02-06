@@ -4,7 +4,7 @@
 	//initialize the session
 	session_start();
 
-	include('config.php');
+	include('../php/config.php');
 
 	//unset all fo the session variables
 	$_SESSION = array();
@@ -13,6 +13,6 @@
 	session_destroy();
 
 	//redirect to the login page
-	header('location: login.php');
+	header('location: ../php/login.php');
 	exit();
 ?>
