@@ -46,6 +46,7 @@
 			$sql = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$password')";
 			mysqli_query($link, $sql);
 			$_SESSION['username'] = $username;
+			$_SESSION['profileimage'] = $profileimage;
 			$_SESSION['success'] = "You are now logged in!";
 			header("location: ../php/index.php");
 		}
@@ -69,8 +70,9 @@
 			$result = mysqli_query($link, $query);
 			if (mysqli_num_rows($result) == 1){
 				$_SESSION['username'] = $username;
+				$_SESSION['profileimage'] = $profileimage;
 				$_SESSION['success'] = "You are now logged in!";
-				header("location: index.php");
+				header("location: ../php/index.php");
 			}else{
 				array_push($errors, "The username/password combination is invalid");
 				header("location: ../php/login.php");
