@@ -1,5 +1,5 @@
 <?php
-	//config
+	//config.php
 
 	session_start();
 	$username = "";
