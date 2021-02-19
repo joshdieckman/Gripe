@@ -6,7 +6,9 @@ function ajaxpost() {
 
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", "gripeinsert.php");
-	xhr.onload = function () {console.log(this.response); };
+	xhr.onload = function () {
+      document.getElementById('gripe').value = "";
+    };
 	xhr.send(data);
 	return false;
 }

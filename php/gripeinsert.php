@@ -13,6 +13,7 @@
 	$sql = ("INSERT INTO messages (username, profileimage, gripe) VALUES ('$username', '$profileimage', '$gripe' )");
 	if($link->query($sql) === true){
 	  $_SESSION['username'] = $username;
+      $_SESSION['profileimage'] = $profileimage;
 	} else{
 		echo "ERROR: Not able to execute $sql. " . $link->error;
 	}
