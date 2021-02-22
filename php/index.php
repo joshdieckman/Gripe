@@ -52,13 +52,17 @@
                 text-decoration: none;
                 background-color: #300030;
               	z-index: 10;
+                background-image: url("/images/gripelogo.png");
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: 500px;
             }
             #hamburgermenu{
                   display: none;
             }
-          #hamburgeritem{
-          		display: none;
-          }
+              #hamburgeritem{
+                    display: none;
+              }
           .left-nav{
 				width: 14%;
                 background-color: #300030;
@@ -110,6 +114,9 @@
             	margin: 1rem 0;
             	text-align: center;
           }
+            #logout{
+                width: 100%;
+            }
 			.form-group{
 				width: 100%;
 				font-size: 1rem;
@@ -182,33 +189,17 @@
             left: 0;
           }
 			@media only screen and (max-width: 1100px) {
-              .top-nav{
+                #hamburgermenu{
+                  display: none;
+                }
+                #hamburgeritem{
+                  display: none;
+                }
+                .top-nav{
               	background-image: url("/images/gripelogo.png");
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: 500px;
-              }
-
-              #hamburgermenu{
-              	display: block;
-                padding-top: 1rem;
-              	font-size: 2rem;
-                color: white;
-                width: 15%;
-                cursor: pointer;
-                margin-top: .5rem;
-              }
-              #hamburgeritem{
-              	width: 100%;
-                text-align: center;
-              }
-              #hamburgeritem a{
-              	width: 50%;
-                display: block;
-                margin: .5rem 13rem;
-              }
-              #hamburgerhide{
-              	display: none;
               }
               .right-nav{
                   display: none;
@@ -240,22 +231,53 @@
               }
           	}
 			@media only screen and (max-width: 850px) {
+                #hamburgermenu{
+              	     display: block;
+                    padding: .5rem 0;
+              	     font-size: 2rem;
+                    color: white;
+                    width: 100%;
+                    cursor: pointer;
+                    margin: .25rem 0;
+                    text-decoration: none;
+                    text-align: center;
+                }
+                #hamburgeritem{
+                    width: 100%;
+                    padding: .5rem;
+                    background-color: black;
+                    text-align: center;
+                }
                 .left-nav{
                     display: none;
                 }
                 .messagecolumn{
-                  	width: 101%;
+                  	width: 100%;
                   	margin-left: -1%;
                 }
               	input, .btn-primary{
               		width: 90%;
                   	margin: .5rem 1.5rem;
               }
-              #hamburgeritem a{
-              	width: 75%;
+            #hamburgeritem li{
                 display: block;
-                margin: .5rem 3.5rem;
+              	 width: 95%;
+                text-align: center;
+                margin: .25rem 0;
+                padding: .25rem;
               }
+            #hamburgeritem li:hover{
+                background-color: #300030;
+                color: #500050;
+              }
+              #hamburgeritem a{
+                display: block;
+              	 width: 100%;
+                  text-align: center;
+              }
+                #logout{
+                    width: 75%;
+                }
           	}
         </style>
 		<script type="text/javascript">
@@ -276,16 +298,21 @@
 			<nav>
               <ul class="d-flex justify-content-around flex-wrap">
                 	<li id="hamburgermenu" class="menu"><a class="#"><i class="fa fa-bars"></i></a></li>
-                  	<li id="hamburgerhide" class="menu"><a href="../php/index.php"><strong><?php echo $_SESSION['username']; ?></strong></a></li>
-                  	<li id="hamburgerhide" class="menu"><a href="#">Profile</a></li>
-                  	<li id="hamburgerhide" class="menubutton"><a href="../php/logout.php" class="btn btn-danger btn-md">Log Out</a></li>
-                	<li id="hamburgerhide" class="logo"><a href="../php/index.php"><img class="logo" src="/images/gripelogo.png" height="100px"></a></li>
               </ul>
 			</nav>
           	<div id="hamburgeritem">
-          		<a href="../php/index.php"><?php echo $_SESSION['username']; ?></a>
-                <a href="#">Profile</a>
-                <a href="../php/logout.php" class="btn btn-danger btn-md">Log Out</a>
+                <ul>
+                    <li><a href="../php/index.php"><?php echo $_SESSION['username']; ?></a></li>
+                    <li><a href="#">Friends</a></li>
+                    <li><a href="#">Following</a></li>
+                    <li><a href="#">Notifications</a></li>
+                    <li><a href="#">Messages</a></li>
+                    <li><a href="#">Account</a></li>
+                    <li><a href="#">Replies</a></li>
+                    <li><a href="#">Tasks</a></li>
+                    <li><a href="#">Meetings</a></li>
+                    <li><a href="../php/logout.php" id="logout" class="btn btn-danger btn-md">Log Out</a></li>
+                </ul>
           	</div>
           </div>
           	<container>
@@ -293,6 +320,7 @@
   				<div class="left-nav">
     				<nav>
       					<ul class="d-flex flex-column">
+                            <li><a href="../php/index.php"><strong><?php echo $_SESSION['username']; ?></strong></a></li>
 							<li><a href="#">Friends</a></li>
 							<li><a href="#">Following</a></li>
 							<li><a href="#">Notifications</a></li>
@@ -301,6 +329,7 @@
 							<li class="condensed"><a href="#">Replies</a></li>
 							<li class="condensed"><a href="#">Tasks</a></li>
 							<li class="condensed"><a href="#">Meetings</a></li>
+                            <li><a href="../php/logout.php" class="btn btn-danger btn-md">Log Out</a></li>
       					</ul>
     				</nav>
   				</div>
