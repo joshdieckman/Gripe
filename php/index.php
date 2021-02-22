@@ -51,7 +51,6 @@
               	top: 0;
                 text-decoration: none;
                 background-color: #300030;
-                border: 1px solid #500050;
               	z-index: 10;
             }
             #hamburgermenu{
@@ -153,7 +152,6 @@
               	color: white;
               	background-color: #300030;
             	border: 1px solid #500050;
-            	margin-top: -1px;
             	position: relative;
             	padding: 1rem;
             	width: 100%;
@@ -179,7 +177,6 @@
             height: 5rem;
             position: fixed;
             background-color: #300030;
-            border: 1px solid #500050;
             z-index: 10;
             bottom: 0;
             left: 0;
