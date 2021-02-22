@@ -231,6 +231,10 @@
               }
           	}
 			@media only screen and (max-width: 850px) {
+                .top-nav{
+                    background-size: 250px;
+                    height: 110px;
+                }
                 #hamburgermenu{
               	     display: block;
                     padding: .5rem 0;
@@ -238,9 +242,9 @@
                     color: white;
                     width: 100%;
                     cursor: pointer;
-                    margin: .25rem 0;
+                    margin: .5rem 0;
                     text-decoration: none;
-                    text-align: center;
+                    text-align: left;
                 }
                 #hamburgeritem{
                     width: 100%;
@@ -278,6 +282,12 @@
                 #logout{
                     width: 75%;
                 }
+                .message{
+                    font-size: 1rem;
+                }
+            .messagecolumn{
+              	 margin-top: 110px;
+			 }
           	}
         </style>
 		<script type="text/javascript">
@@ -341,7 +351,7 @@
 							echo '<div class="message">
 								<img class="image" src="/images/' . $row["profileimage"] . '" height="100px" width="100px">
 								<div class="words">
-									<h4>' . $row["username"] . '</h4>
+									<p><b>' . $row["username"] . '</b></p>
 									<p>' . $row["gripe"] . '</p>
 								</div>
 							</div>';
