@@ -6,10 +6,10 @@
 	$email = "";
 	$errors = array();
 
-	$servername = "db5001102249.hosting-data.io";
-	$dbusername = "dbu19026";
-	$password = "D!3ckm@n";
-	$db = "dbs945854";
+	//$servername = "XXXXX";
+	//$dbusername = "XXXXX";
+	//$password = "XXXXX";
+	//$db = "XXXX";
 
 	/* Attempt to connect to MySQL database */
 	$link = mysqli_connect($servername, $dbusername, $password, $db);
