@@ -29,9 +29,9 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
       	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
       	<style>
-          html{
-          	font-size: 100%;
-          }
+			html{
+				font-size: 100%;
+			}
             body{
                 font: sans-serif;
                 background-color: #300030;
@@ -43,6 +43,10 @@
                 text-decoration: none;
             }
             .top-nav{
+				background-image: url("/images/gripelogo.png");
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: 500px;
                 width: 100%;
               	height: 250px;
               	position: fixed;
@@ -51,19 +55,22 @@
               	top: 0;
                 text-decoration: none;
                 background-color: #300030;
+                border: 1px solid #500050;
               	z-index: 10;
-                background-image: url("/images/gripelogo.png");
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: 500px;
             }
             #hamburgermenu{
-                  display: none;
+                display: none;
+				text-align: left;
+				margin-top: 35px;
+				width: 100%;
+				font-size: 3rem;
+				color: white;
+				cursor: pointer;
             }
-              #hamburgeritem{
-                    display: none;
-              }
-          .left-nav{
+			#hamburgeritem{
+          		display: none;
+			}
+			.left-nav{
 				width: 14%;
                 background-color: #300030;
             	display: inline-block;
@@ -86,8 +93,8 @@
             .right-nav li, .left-nav li{
 				text-decoration: none;
               	text-align: left;
-              	margin: .75rem -1.25rem;
-              	padding: 1rem;
+              	margin: .25rem -1.25rem;
+              	padding: .25rem;
               	border-radius: 5px;
               	width: 100%;
             }
@@ -97,26 +104,14 @@
 			.condensed{
 				display: none;
 			}
-          	.menu{
-          		padding-top: 1rem;
-              	font-size: 1.5rem;
-              	margin-top: 5.5rem;
-          	}
-            .menubutton{
-				padding-top: 1rem;
-              	margin-top: 5rem;
-            }
-          .logo{
+			.logo{
           		margin-top: 2rem;
-          }
-          #gripeform{
+			}
+			#gripeform{
             	width: 100%;
             	margin: 1rem 0;
             	text-align: center;
-          }
-            #logout{
-                width: 100%;
-            }
+			}
 			.form-group{
 				width: 100%;
 				font-size: 1rem;
@@ -133,11 +128,11 @@
 				width: 20%;
               	padding: .6rem;
               	margin-left: .5rem;
-              	margin-top: .025rem;
+              	margin-top: .04rem;
 			}
           	.col-md-12{
           		width: 100%;
-          }
+			}
 			.messagecolumn{
 				display: inline-block;
               	width: 70%;
@@ -154,11 +149,12 @@
           		-ms-overflow-style: none;  /* IE and Edge */
   				scrollbar-width: none;  /* Firefox */
           	}
-          .message{
+			.message{
               	display: inline-block;
               	color: white;
               	background-color: #300030;
             	border: 1px solid #500050;
+            	margin-top: -1px;
             	position: relative;
             	padding: 1rem;
             	width: 100%;
@@ -179,115 +175,126 @@
           	ul{
           		list-style-type: none;
           	}
-          footer{
-          	width: 100%;
-            height: 5rem;
-            position: fixed;
-            background-color: #300030;
-            z-index: 10;
-            bottom: 0;
-            left: 0;
-          }
+			.container {
+				width: 30%;
+              	display: inline-block;
+              	float: right;
+              	right: 0;
+              	position: fixed;
+				color: white;
+				margin: 1rem 0;
+			}
+			.weather {
+				text-align: center;
+              	padding: .25rem;
+              	width: 100%;
+				font-size: 2rem;
+			}
+			#location {
+				text-align: center;
+              	padding: .25rem;
+              	width: 100%;
+				font-size: 1.25rem;
+			}
+			.desc {
+				text-align: center;
+              	padding: .25rem;
+              	width: 100%;
+				font-size: 1.25rem;
+			}
+			.info{
+				text-align: center;
+              	padding: .25rem;
+              	width: 100%;
+				font-size: 1.25rem;
+			}
+			footer{
+				width: 100%;
+				height: 6rem;
+				position: fixed;
+				background-color: #300030;
+				border: 1px solid #500050;
+				z-index: 10;
+				bottom: 0;
+				left: 0;
+			}
 			@media only screen and (max-width: 1100px) {
-                #hamburgermenu{
-                  display: none;
-                }
-                #hamburgeritem{
-                  display: none;
-                }
-                .top-nav{
-              	background-image: url("/images/gripelogo.png");
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: 500px;
-              }
-              .right-nav{
-                  display: none;
-               }
+				.container{
+					font-size: .75rem;
+				}
+				.info{
+					display: none;
+				}
+				.top-nav{
+					background-size: 300px;
+					height: 150px;
+				}
+				.right-nav{
+					display: none;
+				}
                 .condensed{
                   	display: block;
                 }
 				.left-nav{
 					width: 30%;
                   	height: 80vh;
+					top: 150px;
 				}
 				.messagecolumn{
 					width: 71%;
                   	height: 80vh;
                   	margin-left: 30%;
                   	margin-right: -1%;
+                  	margin-top: 150px;
 				}
-              .message{
+				.message{
               		width: 100%;
-              }
-              input, .btn-primary{
+				}
+				input, .btn-primary{
                 	display: block;
               		width: 50%;
                 	margin: .5rem 15rem;
-              }
-              footer{
+				}
+				footer{
               		height: 7rem;
                 	text-align: center;
-              }
+				}
           	}
 			@media only screen and (max-width: 850px) {
-                .top-nav{
-                    background-size: 250px;
-                    height: 110px;
-                }
-                #hamburgermenu{
-              	     display: block;
-                    padding: .5rem 0;
-              	     font-size: 2rem;
-                    color: white;
-                    width: 100%;
-                    cursor: pointer;
-                    margin: .5rem 0;
-                    text-decoration: none;
-                    text-align: left;
-                }
-                #hamburgeritem{
-                    width: 100%;
-                    padding: .5rem;
-                    background-color: black;
-                    text-align: center;
-                }
-                .left-nav{
+                .container{
+					display: none;
+				}
+				#hamburgermenu{
+					display: block;
+				}
+				#hamburgeritem{
+					width: 100%;
+					text-align: center;
+					background-color: black;
+					padding: .5rem;
+				}
+				#hamburgeritem a, .f2{
+					width: 100%;
+					display: block;
+					margin: .5rem 0;
+				}
+				.f2, .desc2{
+					color: white;
+					font-size: 1rem;
+				}
+				.left-nav{
                     display: none;
                 }
                 .messagecolumn{
                   	width: 100%;
-                  	margin-left: -1%;
+					margin-left: 0%;
+					margin-right: 0%;
+					margin-bottom: 7rem;
                 }
               	input, .btn-primary{
               		width: 90%;
-                  	margin: .5rem 1.5rem;
-              }
-            #hamburgeritem li{
-                display: block;
-              	 width: 95%;
-                text-align: center;
-                margin: .25rem 0;
-                padding: .25rem;
-              }
-            #hamburgeritem li:hover{
-                background-color: #300030;
-                color: #500050;
-              }
-              #hamburgeritem a{
-                display: block;
-              	 width: 100%;
-                  text-align: center;
-              }
-                #logout{
-                    width: 75%;
-                }
-                .message{
-                    font-size: 1rem;
-                }
-            .messagecolumn{
-              	 margin-top: 110px;
-			 }
+                  	margin: .5rem 2rem;
+				}
           	}
         </style>
 		<script type="text/javascript">
@@ -308,21 +315,34 @@
 			<nav>
               <ul class="d-flex justify-content-around flex-wrap">
                 	<li id="hamburgermenu" class="menu"><a class="#"><i class="fa fa-bars"></i></a></li>
+					<li>
+						<div class="container">
+							<div id="location">Currently in your area:</div>
+							<div class="desc">No Information Available.</div>
+							<div class="weather">
+								<div class="f"><b>Error</b></div>
+							</div>
+							<div class="info">
+								<p>Sunrise: <span class="sunrise">No Information Available</span></p>
+								<p>Sunset: <span class="sunset">No Information Available</span></p>
+							</div>
+						</div>
+					</li>
               </ul>
 			</nav>
           	<div id="hamburgeritem">
-                <ul>
-                    <li><a href="../php/index.php"><?php echo $_SESSION['username']; ?></a></li>
-                    <li><a href="#">Friends</a></li>
-                    <li><a href="#">Following</a></li>
-                    <li><a href="#">Notifications</a></li>
-                    <li><a href="#">Messages</a></li>
-                    <li><a href="#">Account</a></li>
-                    <li><a href="#">Replies</a></li>
-                    <li><a href="#">Tasks</a></li>
-                    <li><a href="#">Meetings</a></li>
-                    <li><a href="../php/logout.php" id="logout" class="btn btn-danger btn-md">Log Out</a></li>
-                </ul>
+          		<a href="../php/index.php"><b><?php echo $_SESSION['username']; ?></b></a>
+				<a href="#"><b>Friends</b></a>
+				<a href="#"><b>Following</b></a>
+				<a href="#"><b>Notifications</b></a>
+				<a href="#"><b>Messages</b></a>
+				<a href="#"><b>Account</b></a>
+				<a href="#"><b>Replies</b></a>
+				<a href="#"><b>Tasks</b></a>
+				<a href="#"><b>Meetings</b></a>
+				<div class="desc2">No Information Available.</div>
+				<div class="f2">Error</div>
+                <a href="../php/logout.php" class="btn btn-danger btn-md">Log Out</a>
           	</div>
           </div>
           	<container>
@@ -330,7 +350,7 @@
   				<div class="left-nav">
     				<nav>
       					<ul class="d-flex flex-column">
-                            <li><a href="../php/index.php"><strong><?php echo $_SESSION['username']; ?></strong></a></li>
+							<li><a href="../php/index.php"><strong><?php echo $_SESSION['username']; ?></strong></a></li>
 							<li><a href="#">Friends</a></li>
 							<li><a href="#">Following</a></li>
 							<li><a href="#">Notifications</a></li>
@@ -339,7 +359,7 @@
 							<li class="condensed"><a href="#">Replies</a></li>
 							<li class="condensed"><a href="#">Tasks</a></li>
 							<li class="condensed"><a href="#">Meetings</a></li>
-                            <li><a href="../php/logout.php" class="btn btn-danger btn-md">Log Out</a></li>
+							<li><a href="../php/logout.php" class="btn btn-danger btn-md">Log Out</a></li>
       					</ul>
     				</nav>
   				</div>
@@ -351,7 +371,7 @@
 							echo '<div class="message">
 								<img class="image" src="/images/' . $row["profileimage"] . '" height="100px" width="100px">
 								<div class="words">
-									<p><b>' . $row["username"] . '</b></p>
+									<h4>' . $row["username"] . '</h4>
 									<p>' . $row["gripe"] . '</p>
 								</div>
 							</div>';
@@ -361,10 +381,10 @@
   				<div class="right-nav">
                   <nav>
                     <ul class="d-flex flex-column">
-                       <li><a href="#">Account</a></li>
-                       <li><a href="#">Replies</a></li>
-                       <li><a href="#">Tasks</a></li>
-                       <li><a href="#">Meetings</a></li>
+						<li><a href="#">Account</a></li>
+						<li><a href="#">Replies</a></li>
+						<li><a href="#">Tasks</a></li>
+						<li><a href="#">Meetings</a></li>
       				</ul>
                   </nav>
   				</div>
