@@ -266,7 +266,7 @@
 				}
 				#hamburgermenu{
 					display: block;
-                    margin-left: 0;
+                    margin-left: -2rem;
 				}
 				#hamburgeritem{
 					width: 100%;
@@ -287,10 +287,12 @@
                     display: none;
                 }
                 .messagecolumn{
-                  	width: 100%;
-					margin-left: 0%;
-					margin-right: 0%;
+                  	width: 108%;
+					margin-left: -.9rem;
 					margin-bottom: 7rem;
+                }
+                .message{
+              		width: 100%;
                 }
               	input, .btn-primary{
               		width: 90%;
