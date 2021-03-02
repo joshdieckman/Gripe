@@ -296,7 +296,7 @@
                 }
               	input, .btn-primary{
               		width: 90%;
-                  	margin: .5rem 2rem;
+                  	margin: .5rem 1.4rem;
 				}
           	}
         </style>
