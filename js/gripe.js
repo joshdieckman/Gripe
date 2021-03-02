@@ -1,4 +1,4 @@
-const api = 'e6885846dbd2a55149ec5edfb4246afe';
+//const api = 'XXXXXXXXXXXX'; This file does not have the api key
 
 const iconImg = document.getElementById('weather-icon');
 const tempF = document.querySelector('.f');
