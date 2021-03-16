@@ -60,3 +60,15 @@ function ajaxpost() {
 	xhr.send(data);
 	return false;
 }
+
+function likespost() {
+	var data2 = new FormData();
+	data2.append("message_id", document.getElementById("message_id").value);
+	data2.append("total_likes", document.getElementById("total_likes").value);
+	data2.append("add_likes", document.getElementById("add_likes").value);
+
+	var xhr2 = new XMLHttpRequest();
+	xhr2.open("POST", "likes.php");
+	xhr2.send(data);
+	return false;
+}

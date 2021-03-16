@@ -159,10 +159,10 @@
             	padding: 1rem;
             	width: 100%;
             }
-            .image, .words{
+            .image, .words, .likes{
               	display: inline-block;
             }
-            .image{
+            .image, .likes{
               	margin: 0;
               	position: absolute;
               	top: 50%;
@@ -171,6 +171,11 @@
           	}
             .words{
 				margin: 1rem 1rem 1rem 7rem;
+          	}
+          	.likes{
+          		right: 0px;
+              	width: 10%;
+              	padding: .5rem;
           	}
           	ul{
           		list-style-type: none;
@@ -291,9 +296,9 @@
 					margin-left: -.9rem;
 					margin-bottom: 7rem;
                 }
-                .message{
+              .message{
               		width: 100%;
-                }
+              }
               	input, .btn-primary{
               		width: 90%;
                   	margin: .5rem 1.4rem;
@@ -374,10 +379,16 @@
 							echo '<div class="message">
 								<img class="image" src="/images/' . $row["profileimage"] . '" height="100px" width="100px">
 								<div class="words">
-                                    <p>' . $row["timestamp"] . '</p>
+                                	<p>' . $row["timestamp"] . '</p>
 									<h4>' . $row["username"] . '</h4>
 									<p>' . $row["gripe"] . '</p>
 								</div>
+                                <form class="likes" onsubmit="return likespost()">
+									<input type="hidden" id="message_id" name="message_id" value=' . $row["id"] . '>
+                                    <input type="hidden" id="total_likes" name="total_likes" value=' . $row["likes"] . '>
+                                    <input type="hidden" id="add_likes" name="add_likes" value=1>
+									<a href="#" id="submit" type="submit"><i class="fa fa-heart-o fa-lg" aria-hidden="true"> ' . $row["likes"] . '</i></a>
+								</form>
 							</div>';
 						 }
 					?>
