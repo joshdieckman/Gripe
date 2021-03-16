@@ -10,21 +10,14 @@
 
 	$username = ($_SESSION['username']);
 
-	$sql = "SELECT * FROM users WHERE username = '$username'";
-	$result = mysqli_query($link,$sql);
-	while($row = mysqli_fetch_array($result)){
-    	$profileimage= $row['profileimage'];
-    };
-
 	$profile= $_FILES["file"]["name"];
-	$profiletmp=addslashes (file_get_contents($_FILES['file']['tmp_name']));
+	$profileimage=addslashes (file_get_contents($_FILES['file']['tmp_name']));
 
-	$sql = ("INSERT INTO users (filename) VALUES ('$profiletmp') WHERE username = $username");
+	$sql = ("INSERT INTO users (profileimage) VALUES ('$profileimage') WHERE username = $username");
 	if($link->query($sql) === true){
-		$profiletmp = $_SESSION['profiletmp'];
-		include("../php/index.php");
+		$profileimage = $_SESSION['profileimage'];
+		include("./php/index.php");
 	} else{
 		echo "ERROR: Not able to execute $sql. " . $link->error;
 	}
-
 ?>
