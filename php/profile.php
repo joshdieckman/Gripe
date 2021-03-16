@@ -17,7 +17,6 @@
     };
 
 ?>
-<!DOCTYPE html>
 <html lang="en">
 	<head>
     	<meta charset="UTF-8">
@@ -70,37 +69,6 @@
 			#hamburgeritem{
           		display: none;
 			}
-			.left-nav{
-				width: 14%;
-                background-color: #300030;
-            	display: inline-block;
-            	font-size: 1.25rem;
-            	float: left;
-            	top: 250px;
-            	left: 0;
-            	position: fixed;
-            }
-          	.right-nav{
-              	width: 14%;
-                background-color: #300030;
-              	display: inline-block;
-              	font-size: 1.25rem;
-              	float: right;
-            	top: 250px;
-              	right: 0;
-              	position: fixed;
-            }
-            .right-nav li, .left-nav li{
-				text-decoration: none;
-              	text-align: left;
-              	margin: .25rem -1.25rem;
-              	padding: .25rem;
-              	border-radius: 5px;
-              	width: 100%;
-            }
-          	.right-nav li:hover, .left-nav li:hover{
-				text-decoration: none;
-            }
 			.condensed{
 				display: none;
 			}
@@ -130,64 +98,9 @@
               	margin-left: .5rem;
               	margin-top: .04rem;
 			}
-          	.col-md-12{
+          	.col-md-12, .container, .row, .panel-group, .panel-primary, .panel-heading, .panel-body{
           		width: 100%;
-			}
-			.messagecolumn{
-				display: inline-block;
-              	width: 70%;
-              	overflow-y: scroll;
-              	margin-top: 250px;
-              	margin-left: 14%;
-              	margin-right: 14%;
-              	margin-bottom: 6rem;
-			}
-          	.messagecolumn::-webkit-scrollbar {
-                display: none;
-            }
-          	.messagecolumn{
-          		-ms-overflow-style: none;  /* IE and Edge */
-  				scrollbar-width: none;  /* Firefox */
-          	}
-			.message{
-              	display: inline-block;
-              	color: white;
-              	background-color: #300030;
-            	border: 1px solid #500050;
-            	margin-top: -1px;
-            	position: relative;
-            	padding: 1rem;
-            	width: 100%;
-            }
-            .image, .words, .likes{
-              	display: inline-block;
-            }
-            .image, .likes{
-              	margin: 0;
-              	position: absolute;
-              	top: 50%;
-              	-ms-transform: translateY(-50%);
-              	transform: translateY(-50%);
-          	}
-            .words{
-				margin: 1rem 1rem 1rem 7rem;
-          	}
-          	.likes{
-          		right: 0px;
-              	width: 10%;
-              	padding: .5rem;
-          	}
-          	ul{
-          		list-style-type: none;
-          	}
-			.container {
-				width: 30%;
-              	display: inline-block;
-              	float: right;
-              	right: 0;
-              	position: fixed;
-				color: white;
-				margin: 1rem 0;
+				text-align: center;
 			}
 			.weather {
 				text-align: center;
@@ -224,37 +137,13 @@
 				left: 0;
 			}
 			@media only screen and (max-width: 1100px) {
-				.container{
-					font-size: .75rem;
-				}
-				.info{
-					display: none;
-				}
 				.top-nav{
 					background-size: 300px;
 					height: 150px;
 				}
-				.right-nav{
-					display: none;
-				}
                 .condensed{
                   	display: block;
                 }
-				.left-nav{
-					width: 30%;
-                  	height: 80vh;
-					top: 150px;
-				}
-				.messagecolumn{
-					width: 71%;
-                  	height: 80vh;
-                  	margin-left: 30%;
-                  	margin-right: -1%;
-                  	margin-top: 150px;
-				}
-				.message{
-              		width: 100%;
-				}
 				input, .btn-primary{
                 	display: block;
               		width: 50%;
@@ -266,9 +155,6 @@
 				}
           	}
 			@media only screen and (max-width: 850px) {
-                .container{
-					display: none;
-				}
 				#hamburgermenu{
 					display: block;
                     margin-left: -2rem;
@@ -288,17 +174,6 @@
 					color: white;
 					font-size: 1rem;
 				}
-				.left-nav{
-                    display: none;
-                }
-                .messagecolumn{
-                  	width: 108%;
-					margin-left: -.9rem;
-					margin-bottom: 7rem;
-                }
-              .message{
-              		width: 100%;
-              }
               	input, .btn-primary{
               		width: 90%;
                   	margin: .5rem 1.4rem;
@@ -307,10 +182,6 @@
         </style>
 		<script type="text/javascript">
 			$(document).ready(function(){
-				$('#messagecolumn').load('../php/load.php');
-                setInterval(function(){
-                    $('#messagecolumn').load('../php/load.php');
-					}, 3000);
                 $('#hamburgermenu').click(function(){
     				$('#hamburgeritem').slideToggle("slow");
   				});
@@ -339,7 +210,7 @@
               </ul>
 			</nav>
           	<div id="hamburgeritem">
-          		<a href="../php/profile.php"><b><?php echo $_SESSION['username']; ?></b></a>
+          		<a href="../php/index.php"><b><?php echo $_SESSION['username']; ?></b></a>
 				<a href="#"><b>Friends</b></a>
 				<a href="#"><b>Following</b></a>
 				<a href="#"><b>Notifications</b></a>
@@ -352,59 +223,36 @@
 				<div class="f2">Error</div>
                 <a href="../php/logout.php" class="btn btn-danger btn-md">Log Out</a>
           	</div>
-          </div>
-          	<container>
-			<div class="col-md-12">
-  				<div class="left-nav">
-    				<nav>
-      					<ul class="d-flex flex-column">
-							<li><a href="../php/profile.php"><strong><?php echo $_SESSION['username']; ?></strong></a></li>
-							<li><a href="#">Friends</a></li>
-							<li><a href="#">Following</a></li>
-							<li><a href="#">Notifications</a></li>
-							<li><a href="#">Messages</a></li>
-							<li class="condensed"><a href="#">Account</a></li>
-							<li class="condensed"><a href="#">Replies</a></li>
-							<li class="condensed"><a href="#">Tasks</a></li>
-							<li class="condensed"><a href="#">Meetings</a></li>
-							<li><a href="../php/logout.php" class="btn btn-danger btn-md">Log Out</a></li>
-      					</ul>
-    				</nav>
-  				</div>
-  				<div id="messagecolumn" class="messagecolumn">
-					<?php
-						$sql = "SELECT * FROM messages ORDER BY id DESC";
-						$result = mysqli_query($link,$sql);
-						while($row = mysqli_fetch_array($result)){
-							echo '<div class="message">
-								<img class="image" src="/images/' . $row["profileimage"] . '" height="100px" width="100px">
-								<div class="words">
-                                	<p>' . $row["timestamp"] . '</p>
-									<h4>' . $row["username"] . '</h4>
-									<p>' . $row["gripe"] . '</p>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="panel-group">
+							<h1>Profile Image</h1>
+                          	<div class="panel panel-primary">
+                              	<div class="panel-heading"><h2>Current Profile Picture</h2></div>
+									<div class="panel-body">
+										<img src="../images/<?php echo $profileimage; ?>" height="300px" width="300px">
+									</div>
 								</div>
-                                <form class="likes" onsubmit="return likespost()">
-									<input type="hidden" id="message_id" name="message_id" value=' . $row["id"] . '>
-                                    <input type="hidden" id="total_likes" name="total_likes" value=' . $row["likes"] . '>
-                                    <input type="hidden" id="add_likes" name="add_likes" value=1>
-									<a href="#" id="submit" type="submit"><i class="fa fa-heart-o fa-lg" aria-hidden="true"> ' . $row["likes"] . '</i></a>
-								</form>
-							</div>';
-						 }
-					?>
-  				</div>
-  				<div class="right-nav">
-                  <nav>
-                    <ul class="d-flex flex-column">
-						<li><a href="#">Account</a></li>
-						<li><a href="#">Replies</a></li>
-						<li><a href="#">Tasks</a></li>
-						<li><a href="#">Meetings</a></li>
-      				</ul>
-                  </nav>
-  				</div>
+                    		</div>
+							<div class="panel panel-primary">
+                              	<div class="panel-heading"><h2>Upload a New Profile Picture</h2></div>
+									<div class="panel-body">
+									<form action="../php/imageupload.php" method="post" enctype="multipart/form-data">
+										<div class="form-group">
+											<label>JPG, JPEG, PNG, GIF, & PDF files are allowed.</label>
+											<input id="file" class="form-control" type="file" name="image">
+											<button type="submit" id="submit" class="btn btn-primary">Submit</button>
+											<a href="../php/index.php" class="btn btn-danger">Exit</a>
+										</div>
+									</form>
+								</div>
+                    		</div>
+						</div>
+					</div>
+				</div>
 			</div>
-        </container>
+        </div>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="../js/gripe.js"></script>
@@ -427,7 +275,7 @@
         		if(secondsSinceLastActivity > maxInactivity){
             		console.log('User has been inactive for more than ' + maxInactivity + ' seconds');
            	        //Redirect them to your logout.php page.
-           	        location.href = '../php/logout.php';
+           	        location.href = 'logout.php';
                 }
     		      }, 1000);
 
