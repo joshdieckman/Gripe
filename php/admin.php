@@ -46,7 +46,7 @@
             a:link, a:visited, a:hover, a:active{
                 text-decoration: none;
             }
-			.col-md-12, .container, .row, .heading, .title, .current, .body, .form-group{
+			.col-md-12, .container, .row, .heading, .title, .current, .options, .form-group{
           		width: 100%;
 				text-align: center;
 			}
@@ -100,15 +100,20 @@
 			.heading a{
 				margin: 1rem 0;
 			}
-			.btn-info, .btn-primary, .btn-danger{
+			.btn-info{
 				width: 15%;
 			}
-			.btn-primary, .btn-danger{
-				margin: .5rem;
-			}
-			input{
-				width: 40%;
-			}
+            .form-control{
+                width: 100%;
+                text-align: center;
+                margin: .5rem 0;
+            }
+            .btn-primary, .btn-danger{
+                display: block;
+                width: 100%;
+                margin: 1rem 0;
+                text-align: center;
+            }
 			@media only screen and (max-width: 1100px) {
 				.top-nav{
 					background-size: 300px;
@@ -117,9 +122,14 @@
                 .condensed{
                   	display: block;
                 }
-				input, .btn-primary, .btn-danger, .btn-info{
+				.btn-info{
                 	display: block;
               		width: 50%;
+				}
+
+				footer{
+              		height: 7rem;
+                	text-align: center;
 				}
           	}
 			@media only screen and (max-width: 850px) {
@@ -141,9 +151,6 @@
 				.f2, .desc2{
 					color: white;
 					font-size: 1rem;
-				}
-				input, .btn-primary, .btn-danger{
-              		width: 90%;
 				}
               	.btn-info{
               		width: 90%;
@@ -205,7 +212,7 @@
 							<div class="heading">
 								<h2>Upload a New Option</h2>
 							</div>
-							<div class="body">
+							<div class="form-group">
 								<form action="../php/imageupload.php" method="post" enctype="multipart/form-data">
 									<div class="form-group">
 										<label>JPG, JPEG, PNG, GIF, & PDF files are allowed.</label>
@@ -268,6 +275,5 @@
 	           }
 		      activityWatcher();
         </script>
-	</div>
 	</body>
 </html>
