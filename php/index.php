@@ -121,16 +121,16 @@
 			}
 			input{
 				width: 20%;
-              	padding: .5rem;
+              	padding: .6rem;
               	margin-right: .5rem;
               	border-radius: 5px;
-              	margin-top: .5rem;
+              	margin-top: 2rem;
 			}
 			.btn-primary{
-				width: 20%;
-              	padding: .6rem;
               	margin-left: .5rem;
-              	margin-top: .04rem;
+                width: 20%;
+              	padding: .6rem;
+              	margin-top: .025rem;
 			}
           	.col-md-12{
           		width: 100%;
@@ -178,6 +178,7 @@
           		right: 0px;
               	width: 10%;
               	padding: .5rem;
+                display: none;
           	}
           	ul{
           		list-style-type: none;
