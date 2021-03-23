@@ -1,5 +1,5 @@
 <?php
-	//index.php
+	//imageupload.php
 
 	// Include config file
 	require_once "../php/config.php";
@@ -9,15 +9,20 @@
 	}
 
 	$username = ($_SESSION['username']);
+	$accesslvl = ($_SESSION['accesslvl']);
 
-	$profile= $_FILES["file"]["name"];
-	$profileimage=addslashes (file_get_contents($_FILES['file']['tmp_name']));
+	$target = "images/";
+	$target = $target . basename( $_FILES['image']['name']);
+	$image =  basename($_FILES['image']['name']);
 
-	$sql = ("INSERT INTO users (profileimage) VALUES ('$profileimage') WHERE username = $username");
+	$sql = ("INSERT INTO images (image) VALUES ('$image' )");
 	if($link->query($sql) === true){
-		$profileimage = $_SESSION['profileimage'];
-		include("./php/index.php");
+		if(move_uploaded_file($_FILES['image']['tmp_name'], $target)){
+			$username = ($_SESSION['username']);
+			$accesslvl = ($_SESSION['accesslvl']);
+          	include("../php/admin.php");
 	} else{
 		echo "ERROR: Not able to execute $sql. " . $link->error;
 	}
+    }
 ?>

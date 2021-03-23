@@ -46,6 +46,7 @@
 			$sql = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$password')";
 			mysqli_query($link, $sql);
 			$_SESSION['username'] = $username;
+			$_SESSION['accesslvl'] = $accesslvl;
 			$_SESSION['profileimage'] = $profileimage;
 			$_SESSION['success'] = "You are now logged in!";
 			header("location: ../php/index.php");
@@ -71,6 +72,7 @@
 			if (mysqli_num_rows($result) == 1){
 				$_SESSION['username'] = $username;
 				$_SESSION['profileimage'] = $profileimage;
+				$_SESSION['accesslvl'] = $accesslvl;
 				$_SESSION['success'] = "You are now logged in!";
 				header("location: ../php/index.php");
 			}else{

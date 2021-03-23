@@ -1,5 +1,5 @@
 <?php
-	//profile.php
+	//admin.php
 
 	// Include config file
 	require_once "../php/config.php";
@@ -46,6 +46,10 @@
             a:link, a:visited, a:hover, a:active{
                 text-decoration: none;
             }
+			.col-md-12, .container, .row, .heading, .title, .current, .body, .form-group{
+          		width: 100%;
+				text-align: center;
+			}
             .top-nav{
 				background-image: url("/images/gripelogo.png");
 				background-position: center;
@@ -96,66 +100,14 @@
 			.heading a{
 				margin: 1rem 0;
 			}
-			.btn-info{
+			.btn-info, .btn-primary, .btn-danger{
 				width: 15%;
 			}
-			#gripeform{
-            	width: 100%;
-            	margin: 1rem 0;
-            	text-align: center;
-			}
-			.form-group{
-				width: 100%;
-				font-size: 1rem;
-              	text-align: center;
+			.btn-primary, .btn-danger{
+				margin: .5rem;
 			}
 			input{
-				width: 20%;
-              	padding: .5rem;
-              	margin-right: .5rem;
-              	border-radius: 5px;
-              	margin-top: .5rem;
-			}
-          	.col-md-12, .container, .row, .heading, .title, .current{
-          		width: 100%;
-				text-align: center;
-			}
-			.weather {
-				text-align: center;
-              	padding: .25rem;
-              	width: 100%;
-				font-size: 2rem;
-			}
-			#location {
-				text-align: center;
-              	padding: .25rem;
-              	width: 100%;
-				font-size: 1.25rem;
-			}
-			.desc {
-				text-align: center;
-              	padding: .25rem;
-              	width: 100%;
-				font-size: 1.25rem;
-			}
-			.info{
-				text-align: center;
-              	padding: .25rem;
-              	width: 100%;
-				font-size: 1.25rem;
-			}
-			.image{
-				width: 25%;
-				display: inline-block;
-				margin: 15px 20px;
-			}
-			.image img{
-				transition:transform 0.25s ease;
-                border: 1px solid black;
-			}
-			.image img:hover{
-				-webkit-transform:scale(1.5);
-				transform:scale(1.5);
+				width: 40%;
 			}
 			@media only screen and (max-width: 1100px) {
 				.top-nav{
@@ -165,19 +117,10 @@
                 .condensed{
                   	display: block;
                 }
-				input, .btn-primary, .btn-danger{
+				input, .btn-primary, .btn-danger, .btn-info{
                 	display: block;
               		width: 50%;
-                	margin: .5rem 15rem;
 				}
-				.btn-info{
-					width: 50%;
-				}
-				.image{
-                    width: 40%;
-                    display: inline-block;
-                    margin: 20px 0;
-                }
           	}
 			@media only screen and (max-width: 850px) {
 				#hamburgermenu{
@@ -199,16 +142,12 @@
 					color: white;
 					font-size: 1rem;
 				}
-              	input, .btn-primary, .btn-danger{
+				input, .btn-primary, .btn-danger{
               		width: 90%;
-                  	margin: .5rem 1.4rem;
 				}
-				.btn-info{
-					width: 90%;
+              	.btn-info{
+              		width: 90%;
 				}
-				.image{
-                    width: 95%;
-                }
           	}
         </style>
 		<script type="text/javascript">
@@ -260,20 +199,21 @@
 								<img src="/images/<?php echo $profileimage; ?>" height="300px" width="300px">
 							</div>
 							<a href="../php/index.php" class="btn btn-info"><i class="fa fa-home" aria-hidden="true"></i></a>
-                    	</div>
+						</div>
 						<hr>
 						<div class="options">
-                            <div class="heading">
-								<h2>Select a New Profile Picture</h2>
+							<div class="heading">
+								<h2>Upload a New Option</h2>
 							</div>
 							<div class="body">
-								<?php
-									$sql = "SELECT * FROM images ORDER BY id ASC";
-									$result = mysqli_query($link,$sql);
-									while($row = mysqli_fetch_array($result)){
-										echo '<div class="image"><a href="updateimage.php?profileimage=' . $row['filename'] . '"><img src="/images/' . $row['filename'] . '" height="300px" width="300px"></a></div>';
-									}
-								?>
+								<form action="../php/imageupload.php" method="post" enctype="multipart/form-data">
+									<div class="form-group">
+										<label>JPG, JPEG, PNG, GIF, & PDF files are allowed.</label>
+										<input id="file" class="form-control" type="file" name="image">
+										<button type="submit" id="submit" class="btn btn-primary">Submit</button>
+										<a href="../php/index.php" class="btn btn-danger">Exit</a>
+									</div>
+								</form>
 							</div>
 						</div>
 					</div>

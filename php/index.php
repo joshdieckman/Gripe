@@ -9,6 +9,8 @@
 	}
 
 	$username = ($_SESSION['username']);
+	$accesslvl = ($_SESSION['accesslvl']);
+	$profileimage = ($_SESSION['profileimage']);
 
 	$sql = "SELECT * FROM users WHERE username = '$username'";
 	$result = mysqli_query($link,$sql);
@@ -340,6 +342,11 @@
 			</nav>
           	<div id="hamburgeritem">
           		<a href="../php/profile.php"><b><?php echo $_SESSION['username']; ?></b></a>
+				<?php
+					if($_SESSION["accesslvl"] = 10){
+						echo '<a href="../php/admin.php"><b>Admin</b></a>';
+					}
+				?>
 				<a href="#"><b>Friends</b></a>
 				<a href="#"><b>Following</b></a>
 				<a href="#"><b>Notifications</b></a>
@@ -359,6 +366,11 @@
     				<nav>
       					<ul class="d-flex flex-column">
 							<li><a href="../php/profile.php"><strong><?php echo $_SESSION['username']; ?></strong></a></li>
+                          <?php
+								if($_SESSION["accesslvl"] = 10){
+									echo '<li><a href="../php/admin.php">Admin</a></li>';
+								}
+							?>
 							<li><a href="#">Friends</a></li>
 							<li><a href="#">Following</a></li>
 							<li><a href="#">Notifications</a></li>
