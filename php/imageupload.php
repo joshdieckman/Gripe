@@ -18,8 +18,8 @@
 	$sql = ("INSERT INTO images (image) VALUES ('$image' )");
 	if($link->query($sql) === true){
 		if(move_uploaded_file($_FILES['image']['tmp_name'], $target)){
-			$username = ($_SESSION['username']);
-			$accesslvl = ($_SESSION['accesslvl']);
+			$_SESSION['username'] = $username;
+			$_SESSION['accesslvl'] = $accesslvl;
           	include("../php/admin.php");
 	} else{
 		echo "ERROR: Not able to execute $sql. " . $link->error;

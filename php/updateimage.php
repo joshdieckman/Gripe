@@ -12,7 +12,7 @@
 	$accesslvl = ($_SESSION['accesslvl']);
 	$profileimage = ($_GET['profileimage']);
 
-	$sql = "UPDATE users SET profileimage = '$profileimage'";
+	$sql = "UPDATE users SET profileimage = '$profileimage' WHERE username = '$username'";
 	if($link->query($sql) === true){
 		$profileimage = $_SESSION['profileimage'];
 		$username = $_SESSION['username'];
